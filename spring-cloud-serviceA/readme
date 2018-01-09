@@ -1,0 +1,10 @@
+main方法必须放在 controller上层或者同一层
+如果将 spring boot的Main方法放在 包  com.founder.service 里面的话 ，它会扫描 com.founder.service 和 com.founder.service.* 里面的所有的
+
+事务处理  注解方式
+参考资料:http://blog.didispace.com/springboottransactional/
+@EnableTransactionManagement //开启事务支持
+serviceImpl 方法上 使用 注解 @Transactional   //测试该注解放在接口方法上事务没有生效  放在实现方法上注解生效
+
+springboot 多数据源 资料
+参考资料:http://blog.didispace.com/springbootmultidatasource/

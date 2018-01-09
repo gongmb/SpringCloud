@@ -1,0 +1,29 @@
+ribbon负载均衡
+    客户端负载均衡
+        get
+            1,RestTemplate.getForEntity()方法 返回ResponseEntity对象封装了HTTP的响应信息 返回结果在body中
+                getForEntity()重载方式有三种:
+                    getForEntity(URI url,Class responseType)//没有参数绑定
+                    getForEntity(String url,Class responseType,map)//通过map的方式实现参数绑定
+                    getForEntity(String url,ClassresponseType,array)//通过数组的方式实现参数绑定
+            2,RestTemplate.getForObject() 对getForEntity()方法的封装 直接返回结果 BO String
+                getForObject()重载方式有三种:
+                    getForEntity(URI url,Class responseType)
+                    getForEntity(String url,Class responseType,map)
+                    getForEntity(String url,ClassresponseType,array)
+        post
+            1,RestTemplate.postForEntity() 和getForEntity()方法类似 重载方法亦有三种 同上类似
+            2,RestTemplate.postForObject() 同上
+            3,RestTemplate.postForLocation()
+        put
+            RestTemplate.put() 没有返回值
+                 put(URI url,object param)
+                 put(String url,object param,map)
+                 put(String url,object param,array)
+        delete
+            RestTemplate.delete()
+                delete(URI url)
+                delete(String url,map)
+                delete(String url,array)
+
+    服务端负载均衡
